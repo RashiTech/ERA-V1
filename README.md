@@ -1,13 +1,16 @@
 # ERA-V1 by The School of AI (TSAI)
-## Session 5
+## _Session 5_
 ## Identification of handwritten numbers MNIST dataset using Deep Learning Convolutional Neural Network
-The code is written in Python and the neural network is built using PyTorch framework.
+The code is written in __Python__ and the neural network is built using __PyTorch__ framework.
 
 Modular structure followed for writing the code.
 
-utils.py is the custom module holding datasets tyransformation functions, train-test functions , plotting and optimizing functions.
-model.py is the custom module holding network architecture.
-S5.ipynb is the main code file where functions from the utils.py and model.py are called to meet the objective.
+__utils.py__ is the custom module holding datasets tyransformation functions, train-test functions , plotting and optimizing functions.
+
+__model.py__ is the custom module holding network architecture.
+
+__S5.ipynb__ is the main code file where functions from the utils.py and model.py are called to meet the objective.
+
 
 ## Network Architecture
 
