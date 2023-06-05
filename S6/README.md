@@ -1,4 +1,5 @@
-# Assignment 6 Part 1
+# Assignment 6 Part 1 and 2
+# Part 1
 ## Manual Backpropagation for a Three layer (1 Input, 1 Hidden and 1 Output layer) Neural Network using different learning rates
 
 
@@ -164,5 +165,45 @@ We analyse the Loss over **100 iterations**, for different learning rates and un
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/07073f5a-3ba2-4dfb-bb31-482916a06eae)
 
+
+# Part 2
+
+## MNIST CLassifier using Convolutional Neural Network with 99.4% Validation accuracy
+
+### Constraints :
+
+1.Numnber of parameters < 20K
+
+2.Less than 20 epochs
+
+### Network Summary
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/08f46c86-58d3-495a-bc1b-63823c7a3675)
+
+**Highlights of this Squeeze and Expand Network Architecture:**
+
+Network has total 9 layers.
+
+Logic used for designing layers is CRB (Convolution-Relu-Batch Normalization).
+
+Dropout of 0.05% is used after Batch Normalization layer.
+
+Dropout & Batch Normalization not used after 1x1 convolution layer as there was a considerable gap observed between train and test accuracy.
+
+1x1 convolution is used after two 3x3 convolutions followed by Max pooling.
+
+Number of channels vary from 8 to 32 at different layers.
+
+GAP is used near to last layer after convolution and a layer before fully connected layer.
+
+Fully connected layer is the last layer of network.
+
+Log Softmax used as last layer activation function with NLL Loss.
+
+Trainable parameters for network are 16,562 (less than 20k).
+
+## 99.4% test/validation accuracy from 15th epoch.
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/7233815b-c570-48f0-9f52-4f034d40b6ba)
 
 
