@@ -30,9 +30,9 @@ Less than 8000 Parameters
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/a859f6f3-d1bd-4451-8981-8ac0c3e28549)
 
 
-## Block 2- Introducing BatchNorm
+## Block 2
 
-### Code 4
+### Code 4 - Introducing BatchNorm
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/78a81d9a-dab0-4475-beb0-9487dfae91e5)
 
@@ -44,12 +44,34 @@ Less than 8000 Parameters
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/e44a9dd1-32e3-4add-924c-12d29545ffa4)
 
-### Code 6-
+### Code 6- Bringing Transition block at RF = 5
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/c53c29b6-a5d3-4403-9111-6b6d868e6bee)
 
 
-
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/2dd92255-4b9f-48d8-adc2-0b3441db4493)
 
 
 ## Block 3
+
+### Code 7 Increasing parameters for removing underfitting
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/aaf01ff0-dbac-425b-8053-5c43843ed1ba)
+
+
+
+### Code 8 - Image Augmentation- Random Rotation and ColorJitter
+
+
+
+### Code 9 - Scheduling LR
+
+
+
+
+### Code 10 - Final Model Using Scheduler with higher starting LR
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/ec165f14-a3b0-4346-b98a-93128f4384eb)
+
 
 
