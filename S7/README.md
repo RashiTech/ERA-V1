@@ -49,29 +49,20 @@ Less than 8000 Parameters
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/c53c29b6-a5d3-4403-9111-6b6d868e6bee)
 
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/2dd92255-4b9f-48d8-adc2-0b3441db4493)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/4161da5b-fc1d-43ea-9a9c-1d086e4fd66d)
 
 
 ## Block 3
 
-### Code 7 Increasing parameters for removing underfitting
+### Code 10 - Final Model Using Scheduler with higher starting LR, Image augmentation
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/aaf01ff0-dbac-425b-8053-5c43843ed1ba)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/620e47bf-ba65-4e8e-81f3-4ac0d4ee3a0b)
 
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/5d66ef97-9f6e-4491-bdfd-2ff7cce2da3f)
 
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/de53f76b-4041-4d97-90cc-1615c5d644d9)
 
-### Code 8 - Image Augmentation- Random Rotation and ColorJitter
-
-
-
-### Code 9 - Scheduling LR
-
-
-
-
-### Code 10 - Final Model Using Scheduler with higher starting LR
-
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/ec165f14-a3b0-4346-b98a-93128f4384eb)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/727846ed-2fab-4f57-a4b7-03d982ef4c1c)
 
 
 
