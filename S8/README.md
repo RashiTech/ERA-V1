@@ -48,6 +48,6 @@ Target accuracy of 70% achieved at around 10th epoch in all case.
 
 ## Result : Train and Test Accuracies 
 
-### Batch Normalization achieves best train and Test accuracy followed by Group Normalization.
+### Batch Normalization achieves best Train and Test accuracy followed by Group Normalization.
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/57399723-a431-4e6b-9034-d05371219684)
