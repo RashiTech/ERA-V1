@@ -8,9 +8,11 @@
 
 2. Less than or equal to 20 epochs
 
-## Network Summary   (Batch Size = 128)
+## Network Summary   
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/eb832c2e-e7c3-4021-a24c-e4baa8fd3e84)
+
+Batch Size = 128
 
 Parameters= 35,504
 
