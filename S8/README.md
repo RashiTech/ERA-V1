@@ -13,8 +13,12 @@
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/eb832c2e-e7c3-4021-a24c-e4baa8fd3e84)
 
 Parameters= 35,504
+
 Image Augmentation implemented- ColorJitter, RandomHorizontalFlip(p=0.3), RandomRotation((-10., 10.)
+
 Dropout regularization (0.02)
+
+Target accuracy of 70% achieved at around 10th epoch in all case.
 
 ### Graphs - Batch Normalization
 
@@ -42,4 +46,6 @@ Dropout regularization (0.02)
 
 ## Result : Train and Test Accuracies 
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/2f5fc7f1-bbcc-4b5e-8aa8-7097a5eebbb0)
+### Batch Normalization achieves best train and Test accuracy followed by Group Normalization.
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/57399723-a431-4e6b-9034-d05371219684)
