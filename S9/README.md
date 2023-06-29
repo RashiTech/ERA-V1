@@ -27,7 +27,17 @@ No constraint on epochs
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/bc9e83a0-2a5c-4f17-b041-a7514f7cb722)
 
-## 85% Test Accuracy achieved in 50 epochs
+## Transformations
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/1e4d6d75-26e0-405b-bd5d-22b644959e5c)
+
+
+## 85% Test Accuracy achieved consistently after 50th epochs
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/7b30fcbc-d40b-43dc-934f-673fbb7ced68)
+
+## Loss and Accuracy Curves
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/5524b7ae-d602-4cba-b3f6-d5e8dd6781bb)
+
 
