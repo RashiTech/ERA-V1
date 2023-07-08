@@ -27,3 +27,8 @@
 ## Mispredicted Pictures
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/ed605ccc-0e46-4e4a-9cb5-b80e1324f42d)
+
+## All help functions cloned from Github repo
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/8ff2b7b9-9b08-47a8-b049-1d2dbc8c5e1b)
+
