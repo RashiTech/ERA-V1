@@ -24,6 +24,6 @@
 
 ## Grad-CAM output
 
- Channel size for layer 3 was 8X8 - suitable for GRad-CAM output. However, output is generated for all conv layers.
+ Channel size for layer 3 was 8X8 - suitable for Grad-CAM output. However, output is generated for all conv layers.
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/df646c63-c277-4a7a-873d-d213cf829b78)
