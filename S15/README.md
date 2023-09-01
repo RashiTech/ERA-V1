@@ -2,7 +2,7 @@
 
 ## Model trained on PyTorch LightningModule on opus_book dataset from Hugging Face (Partner from ERAv1 : Madhur Prakash Garg)
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/5a79e212-6407-42ce-998b-e57410ec865d)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/77fbce53-ad1b-4b8a-9295-1d4ec1596052)
 
 ### Total Epochs - 10
 
