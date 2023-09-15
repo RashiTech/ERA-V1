@@ -2,7 +2,7 @@
 
 ## Partner from ERAv1- Madhur Prakash Garg
 
-## Logs from BERT - run for 100 epochs
+## Logs from BERT - run for 100 steps
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/28ab3446-6041-4343-ac49-ccc256536e01)
 
