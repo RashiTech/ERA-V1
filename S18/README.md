@@ -1,5 +1,7 @@
 # Part 1- UNET (MaxPooling | Strided Convolution for Contracting Block, Transpose Convolution | Upsampling for Expanding Block with Binary Cross Entropy | DICE Loss)
 
+### Partner from ERAv1 Madhur Prakash Garg
+
 ## Case 1 MP+Tr+BCE
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/0fb5454a-4134-45a4-b7f6-bb4e1328c804)
