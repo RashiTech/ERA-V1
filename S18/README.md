@@ -18,7 +18,7 @@
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/4b2d5b55-ba63-4633-b645-9031e0ea4ac8)
 
-# Part 2- Variational Auto Encoders trained with incorrect labels passed 50% times for MNIST and CIFAR10 dataset
+# Part 2- Variational Autoencoder (VAE) trained with incorrect labels passed 50% times for MNIST and CIFAR10 dataset
 
 ## Results with MNIST dataset
 
