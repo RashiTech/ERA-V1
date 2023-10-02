@@ -1,4 +1,4 @@
-# Gradio demo for FAST Segment Anything
+# Gradio demo for FastSAM (Fast Segment Anything Model)
 
 https://huggingface.co/spaces/RashiAgarwal/FastSAM_Gradio
 
