@@ -1,5 +1,9 @@
 # Gradio demo for FAST Segment Anything
 
+https://huggingface.co/spaces/RashiAgarwal/FastSAM_Gradio
+
+### Partner from ERAv1 - Madhur Prakash Garg
+
 ## Segment everything
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/88dcccbc-fa60-43ca-bb4e-cf77ec65fd1e)
