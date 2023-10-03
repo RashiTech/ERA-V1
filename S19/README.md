@@ -6,13 +6,12 @@ https://huggingface.co/spaces/RashiAgarwal/FastSAM_Gradio
 
 ## Segment everything
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/88dcccbc-fa60-43ca-bb4e-cf77ec65fd1e)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/6706c16b-a046-4f09-9222-7abbfa5ab7e7)
 
 ## Point Prompt
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/672fe28a-2f4c-4eda-a3e1-782825c2624a)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/f2980644-f3e1-4777-8b9f-0a47a3d78725)
 
 ## Text Prompt
 
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/5f97f0bb-eb79-4b7b-85ab-b331ec4591d7)
-
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/e5b116e8-a199-4090-ba89-8b175e8aec55)
