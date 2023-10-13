@@ -6,6 +6,10 @@ Partner from ERAV1: Madhur Prakash Garg
 
 #### https://huggingface.co/spaces/RashiAgarwal/GenerativeArt_StableDiffusion
 
+## Link @ LinkedIn 
+
+#### https://lnkd.in/dgasz7Na 
+
 ## Prompt: an oil painting of a god
 
 ### Original Image
