@@ -4,7 +4,7 @@ Partner from ERAV1: Madhur Prakash Garg
 
 ## Prompt: an oil painting of a god
 
-##  Customized Loss ( Loss defined as difference between the to be predicted image with that of Rainbow as shown below)
+##  Customized RAINBOW Loss ( Loss defined as difference between the to be predicted image with that of Rainbow as shown below)
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/146dfece-974e-4b84-80af-50af04848cc2)
 
