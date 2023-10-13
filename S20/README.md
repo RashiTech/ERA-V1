@@ -2,18 +2,21 @@
 
 Partner from ERAV1: Madhur Prakash Garg
 
+## Hugging Face Demo
+
+#### https://huggingface.co/spaces/RashiAgarwal/GenerativeArt_StableDiffusion
+
 ## Prompt: an oil painting of a god
+
+### Original Image
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/6c4235d8-21ae-4e51-bce8-51ca52c66a19)
 
 ##  Customized RAINBOW Loss ( Loss defined as difference between the to be predicted image with that of Rainbow as shown below)
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/146dfece-974e-4b84-80af-50af04848cc2)
 
-
-## Original Image
-
-![image](https://github.com/RashiTech/ERA-V1/assets/90626052/6c4235d8-21ae-4e51-bce8-51ca52c66a19)
-
-## Different Styles
+## Applying Different Styles
 
 ### Midjourney
 
