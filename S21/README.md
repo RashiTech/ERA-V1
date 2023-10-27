@@ -18,6 +18,6 @@ https://huggingface.co/spaces/RashiAgarwal/NanoGPT_charToken
 
 ### Training logs
 
-![Untitled](https://github.com/RashiTech/ERA-V1/assets/90626052/0bcba4db-d98a-40fd-80c4-4b432e0541ce)
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/4aa6a460-81cd-4683-babd-dffb607149ea)
 
 ![Untitled-1](https://github.com/RashiTech/ERA-V1/assets/90626052/5a89ab65-ba60-4f2c-9311-33672ec3d9c4)
