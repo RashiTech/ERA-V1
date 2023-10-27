@@ -1,6 +1,6 @@
 # Training NanoGPT from scratch
 
-###Partner from ERAv1- Madhur Prakash Garg
+#### Partner from ERAv1- Madhur Prakash Garg
 
 ## Hugging face Link
 
