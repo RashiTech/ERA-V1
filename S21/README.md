@@ -6,7 +6,7 @@
 
 https://huggingface.co/spaces/RashiAgarwal/NanoGPT_charToken
 
-## 1.65 Million Parameter transformer model trained on 1MB size dataset (Shakespeare work) using character level tokenization
+## 1.65 Million Parameter transformer model(Decoder only) trained on 1MB size dataset (Shakespeare work) using character level tokenization
 
 ### vocab size: 65
 
