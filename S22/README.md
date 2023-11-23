@@ -11,5 +11,11 @@
 
 ## Predictions
 
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/20b2250c-76e4-490e-a537-ac78261c70f5)
 
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/3b1dd45f-be38-4e34-990a-1e85c4c85fc3)
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/88726c2b-0bf0-4b31-af56-4f019c1f5e75)
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/b058426b-d592-46d0-b8a1-95065091c240)
 
