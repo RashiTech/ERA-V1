@@ -1,6 +1,5 @@
 # Twin Delayed DDPG (Deep Deterministic Policy Gradient) Model trained for a car moving on custom road environment
 
-## Video url
 
 ### Requirements
 
