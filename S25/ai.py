@@ -43,9 +43,9 @@ class ReplayBuffer(object):
 class Actor(nn.Module):
     def __init__(self, state_dim, action_dim, max_action):
         super(Actor, self).__init__()
-        self.layer_1 = nn.Linear(state_dim, 512)
-        self.layer_2 = nn.Linear(512, 256)
-        self.layer_3 = nn.Linear(256, action_dim)
+        self.layer_1 = nn.Linear(state_dim, 400)
+        self.layer_2 = nn.Linear(400, 300)
+        self.layer_3 = nn.Linear(300, action_dim)
         self.max_action = max_action
 
     def forward(self, x):
@@ -58,13 +58,13 @@ class Critic(nn.Module):
     def __init__(self, state_dim, action_dim):
         super(Critic, self).__init__()
         # Defining the first Critic neural network
-        self.layer_1 = nn.Linear(state_dim + action_dim, 512)
-        self.layer_2 = nn.Linear(512, 256)
-        self.layer_3 = nn.Linear(256, 1)
+        self.layer_1 = nn.Linear(state_dim + action_dim, 400)
+        self.layer_2 = nn.Linear(400, 300)
+        self.layer_3 = nn.Linear(300, 1)
         # Defining the second Critic neural network
-        self.layer_4 = nn.Linear(state_dim + action_dim, 512)
-        self.layer_5 = nn.Linear(512, 256)
-        self.layer_6 = nn.Linear(256, 1)
+        self.layer_4 = nn.Linear(state_dim + action_dim, 400)
+        self.layer_5 = nn.Linear(400, 300)
+        self.layer_6 = nn.Linear(300, 1)
 
     def forward(self, x, u):
         xu = torch.cat([x, u], 1)
@@ -106,7 +106,7 @@ class TD3(object):
             self.model_loaded = 0
         print(f'self.model_loaded : {self.model_loaded}')
 
-        self.train_iterations = 10000
+        self.train_iterations = 1000
         self.batch_size = 100
         self.discount = 0.99
         self.tau = 0.005
@@ -119,13 +119,7 @@ class TD3(object):
     def select_action(self, reward, state, done):
         if self.total_time_steps > 1:   
             self.replay_buffer.add((self.last_state, state.flatten(), self.last_actions, reward, done))             
-        # if self.total_time_steps == 10_000 and self.model_not_loaded:                      
-        #     self.train_iterations = 100 
-        #     self.batch_size = 100
-        #     print(f' Training at {self.total_time_steps} for {self.train_iterations}')
-        #     self.train() 
-        #     self.steps_since_last_train = 0
-        # print(f'self.total_time_steps : {self.total_time_steps} & self.steps_since_last_train : {self.steps_since_last_train}')
+      
 
         if self.model_loaded:
             if self.steps_since_last_train == 500: 
@@ -135,7 +129,7 @@ class TD3(object):
                 print(f' self.model_not_loaded - {self.model_loaded} - Training at {self.total_time_steps} for {self.train_iterations}')
                 self.train()               
         else:
-            if self.total_time_steps == 10_000:
+            if self.total_time_steps == 10000:
                 self.train_iterations = 100 
                 self.batch_size = 100
                 print(f' self.model_not_loaded - {self.model_loaded} - Training at {self.total_time_steps} for {self.train_iterations}')    
@@ -148,31 +142,20 @@ class TD3(object):
                 print(f' self.model_not_loaded - {self.model_loaded} - Training at {self.total_time_steps} for {self.train_iterations}')
                 self.train()            
 
-        # if self.total_time_steps > 10_000 and self.model_not_loaded:            
-        #     if self.steps_since_last_train == 500:
-        #         self.train_iterations = 4
-        #         self.batch_size = 50
-        #         self.steps_since_last_train = 0
-        #         print(f' Training at {self.total_time_steps} for {self.train_iterations}')
-        #         self.train()
+    
         
         state = torch.Tensor(state.reshape(1, -1)).to(device)        
         probs = F.softmax(self.actor(Variable(state, volatile = True))*100)
-        # if self.total_time_steps < 10_000 and self.total_time_steps > 500:
-        #     # probs = torch.rand(size=(1, 3))
-        #     # probs /= probs.sum()
-        #     self.actor_learn()
-        # else:
-        #     probs = F.softmax(self.actor(state), dim=-1) 
+        
 
         # rotation = int(torch.where(action < -4, -5, torch.where(action > 4, 5, 0)))        
         action = int(probs.multinomial(1).squeeze(0))
         # action = torch.argmax(probs)
         actions = probs.data.numpy().flatten()        
-        # print(f'self.total_time_steps : {self.total_time_steps} , action : {action} , actions: {actions}, type(actions) : {type(actions)}')
+
         self.last_state = state.numpy().flatten()
         self.last_actions = actions
-        # self.last_action = action.data.numpy().flatten()
+        
         self.steps_since_last_train += 1
         self.total_time_steps += 1
         if self.total_time_steps % 10000 == 0:
