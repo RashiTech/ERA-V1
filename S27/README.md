@@ -6,6 +6,10 @@
 
 https://huggingface.co/spaces/RashiAgarwal/phi2-tsai
 
+
+![image](https://github.com/RashiTech/ERA-V1/assets/90626052/0f088b7d-09d4-43ac-9aa8-7be9ee8a8641)
+
+
 ## Training Logs
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/536eb0df-4083-4be4-89f8-f4fdf4fe40d5)
