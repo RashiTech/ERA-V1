@@ -12,7 +12,7 @@ https://huggingface.co/spaces/RashiAgarwal/phi2-tsai
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/a2bfd697-78e6-4a46-bfc7-3c521c52c702)
 
-## Fine-Tuned Model with adapter weights
+## Fine-Tuned Model with adapter weights for four layers-"Wqkv","out_proj","fc1","fc2"
 
 ![image](https://github.com/RashiTech/ERA-V1/assets/90626052/4bf2aa56-ff07-4b98-a3ac-d7819895151c)
 
