@@ -42,9 +42,15 @@ batch_size = 2
 
 ## Step 2 : Fine Tuning the model with Instruct150K dataset
 
-### WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT - Done
-#### Pre-requisites : ffmpeg, pydub
-#### Accepts only the starting 10 seconds speech before transcribing
+### Audio_projector : whisperX_module.py
+
+WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
+ 
+Pre-requisites : ffmpeg, pydub
+
+Accepts only the starting 10 seconds speech before transcribing
+
+Tokenize the transcript and embed tokens for making it input ready to Phi-2
 
 
 ### For Visual Part we have the pretrained Projection Layer from Step 1- Done - to be further finetuned with instruct150k dataset
