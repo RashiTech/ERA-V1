@@ -7,6 +7,7 @@ import random
 import gc
 import numpy as np
 import os
+from whisperx_module import audio_projection
 
 # teacher forcing simulated annealing scheduler
 def frange_cycle_linear(n_iter, start=0.0001, stop=0.9999,  n_cycle=1, ratio=0.8):
