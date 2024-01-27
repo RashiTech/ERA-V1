@@ -44,18 +44,18 @@ batch_size = 2
 
 ### Audio_projector : whisperX_module.py
 
-WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
+#### WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
  
-Pre-requisites : ffmpeg, pydub
+#### Pre-requisites : ffmpeg, pydub
 
-Accepts only the starting 10 seconds speech before transcribing
+#### Accepts only the starting 10 seconds speech before transcribing
 
-Tokenize the transcript and embed tokens for making it input ready to Phi-2
+#### Tokenize the transcript and embed tokens for making it input ready to Phi-2
 
+## To be Done -Final integration and fine tuning
 
-### For Visual Part we have the pretrained Projection Layer from Step 1- Done - to be further finetuned with instruct150k dataset
+### For Visual Part we have the pretrained Projection Layer from Step 1 to be further finetuned with instruct150k dataset
 
-## This part is yet to be done
 ### The Input to the phi-2 model is the concatenation of the output from Image projection layer with the embeddings of the tokenized Audio output and instruction part from the dataset. The Answers are passed as Target.
 
 ### Further Action Planned:
