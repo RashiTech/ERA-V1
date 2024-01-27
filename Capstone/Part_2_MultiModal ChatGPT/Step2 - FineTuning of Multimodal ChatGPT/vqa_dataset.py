@@ -1,9 +1,3 @@
-"""
- Copyright (c) 2022, salesforce.com, inc.
- All rights reserved.
- SPDX-License-Identifier: BSD-3-Clause
- For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
-"""
 
 import copy
 import json
@@ -15,12 +9,12 @@ from typing import Iterable
 import numpy as np
 import torch
 from PIL import Image
-from torch.utils.data import ConcatDataset, Dataset
+from torch.utils.data import  Dataset
 from torch.utils.data.dataloader import default_collate
-from transformers import LlamaTokenizer
+from transformers import AutoTokenizer
 
 TEMPLATE = {
-    "description": "Template used by Alpaca-LoRA.",
+    "description": "Template.",
     # "prompt_choice": "Below is a multiple choice question about an image, along with answer options. Please choose the correct answer from these options.\n\n### Image:\n{image}\n\n### Question:\n{question}\n\n### Input:\n{options}\n\n### Answer:\n",
     # "prompt_qa": "Below is a question about an image. Write a response to answer the question.\n\n### Image:\n{image}\n\n### Question:\n{question}\n\n### Answer:\n",
     "prompt_choice": "Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Image:\n{image}\n\n### Instruction:\n{question}\n\n### Input:\n{options}\n\n### Response:\n",
@@ -58,7 +52,7 @@ class VQADataset(Dataset):
         ann_root (string): directory to store the annotation file
         """
         assert tokenizer.add_eos_token is False, "tokenizer should not add eos token by default"
-        self.tokenizer: LlamaTokenizer = tokenizer
+        self.tokenizer: AutoTokenizer = tokenizer
         self.vis_root = vis_root
 
         self.annotation = []
@@ -205,23 +199,3 @@ class VQADataset(Dataset):
         }
 
 
-class ConcatDataset(ConcatDataset):
-    def __init__(self, datasets: Iterable[Dataset]) -> None:
-        super().__init__(datasets)
-
-    def collater(self, samples):
-        # TODO For now only supports datasets with same underlying collater implementations
-
-        all_keys = set()
-        for s in samples:
-            all_keys.update(s)
-
-        shared_keys = all_keys
-        for s in samples:
-            shared_keys = shared_keys & set(s.keys())
-
-        samples_shared_keys = []
-        for s in samples:
-            samples_shared_keys.append({k: s[k] for k in s.keys() if k in shared_keys})
-
-        return self.datasets[0].collater(samples_shared_keys)
