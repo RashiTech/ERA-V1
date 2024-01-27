@@ -31,19 +31,6 @@ max_steps = 100000
 
 annealing_teacher_forcing_scheduler = frange_cycle_linear(max_steps)
 
-class SimpleResBlock(nn.Module):
-    def __init__(self, phi_embed):
-        super().__init__()
-        self.pre_norm = nn.LayerNorm(phi_embed)
-        self.proj = nn.Sequential(
-            nn.Linear(phi_embed, phi_embed),
-            nn.GELU(),
-            nn.Linear(phi_embed, phi_embed)
-        )
-    def forward(self, x):
-        x = self.pre_norm(x)
-        return x + self.proj(x)
-
 class CLIPPhi2Model(torch.nn.Module):
     def __init__(self, clip_embed=640, phi_embed=2560):
         super().__init__()
@@ -59,7 +46,7 @@ class CLIPPhi2Model(torch.nn.Module):
 
         # projection layers
         self.projection = torch.nn.Linear(clip_embed, phi_embed)
-        #self.resblock = SimpleResBlock(phi_embed)
+        
 
         # Freeze Weights
         for network in [self.phi_model, self.clip_model]:
@@ -69,8 +56,7 @@ class CLIPPhi2Model(torch.nn.Module):
         # load checkpoint weights
         if os.path.isfile('model_chkpt/clipphi_proj.pth'):
             self.projection.load_state_dict(torch.load('model_chkpt/clipphi_proj.pth'))
-            #self.resblock.load_state_dict(torch.load('model_chkpt/clipphi_resblock.pth'))
-
+            
 
     def generate(self,images, audio_file, max_length,tokenizer):
         
