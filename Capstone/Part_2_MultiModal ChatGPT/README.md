@@ -42,6 +42,8 @@ batch_size = 2
 
 ## Step 2 : Fine Tuning the model with Instruct150K dataset
 
+### Text Finetuning done using QLoRA Strategy
+
 ### Audio_projector : whisperX_module.py
 
 #### WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
