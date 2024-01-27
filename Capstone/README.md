@@ -36,8 +36,6 @@ Minimum loss observed = 5.442
 
 ## Part - 2 : Creating a Multimodal Chat GPT accepting AUdio, Visual and Text inputs to generate Text output
 
-# Capstone Part 2 - The School of AI - ERA v1
-
 ## Objective: To create MultiModal Large Language Model (Frozen Clip + Frozen Phi-2) 
 ## The image projection layer to be pre-trained with image-caption(COCO 2017) dataset and then the entire model to be finetuned on Visual Q&A (instruct150K) datset
 
