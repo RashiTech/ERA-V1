@@ -43,6 +43,7 @@ batch_size = 2
 ## Step 2 : Fine Tuning the model with Instruct150K dataset
 
 ### WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT - Done
+#### Accepts only the starting 10 seconds speech before transcribing
 
 ### For Visual Part we have the pretrained Projection Layer from Step 1- Done - to be further finetuned with instruct150k dataset
 
