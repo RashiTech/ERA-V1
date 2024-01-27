@@ -1,16 +1,16 @@
-# Capstone- The School of AI - ERA v1
+# Capstone Part 1 - The School of AI - ERA v1 
 
-## Part 1- Pretraining of Language Model Microsoft/Phi-2
+## Pretraining of Language Model Microsoft/Phi-2
 
-### Project Details
+### Project Keypoints
 
 #### 1. Large Language Model Microsoft-phi-2 (2.7 Billion Parameters) pre-trained from scratch on NVIDIA-A100 40GB GPU.
 
 #### 2. Model trained on a cleaned 100MB data (zipped) - A small subset of RedPajama dataset- only cc and c4
 
-#### 3. Memory Management for pretraining os single 40GB GPU
+#### 3. Memory Management for pretraining on a single 40GB GPU
 
-Optimizer used - bnb.optim.Adam8bit (from bitsandbytes)
+8bit BNB quantized optimizer used - bitsandbytes.optim.Adam8bit (4 times less memory usage when compared to AdamW/Adam)
 
 torch.cuda.amp.autocast(enabled=True)
 
@@ -26,7 +26,8 @@ gradient_checkpointing not supported by phi-2
 
 Minimum loss observed = 5.442
 
-![Untitled](https://github.com/RashiTech/ERA-V1/assets/90626052/a74d43a0-cb34-44db-96a0-31e9a43520e5)
+<img width="583" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/234eedd0-57b4-40f1-ba73-768e062a779f">
 
-![Untitled-1](https://github.com/RashiTech/ERA-V1/assets/90626052/58f8b992-c311-4b37-b05f-e627916a78ff)
+<img width="603" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/501e3178-a999-4470-90af-a4c69833b2c7">
+
 
