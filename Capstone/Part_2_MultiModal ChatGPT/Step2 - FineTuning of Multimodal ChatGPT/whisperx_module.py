@@ -5,8 +5,10 @@ import torch
 import pydub
 import ffmpeg
 from pydub import AudioSegment
+from transformers import Autotokenizer
 
 device = "cuda" if torch.cuda.is_available() else 'cpu'
+
 
 def speech2text(audio_file):
 
@@ -26,4 +28,18 @@ def speech2text(audio_file):
     result = model.transcribe(audio, batch_size=batch_size)
 
     return result["segments"][0]['text']
+
+def projection_audio(transcript):
+    '''
+    converts audio transcript to tokens to embeddings to be further inputted to phi
+    '''
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2", trust_remote_code=True)
+    phi_model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", trust_remote_code=True)
+    
+    aud_tokens = tokenizer(transcript, return_tensors="pt", return_attention_mask=False)
+    audio_token_embeds = self.phi_model.model.embed_tokens(aud_tokens['input_ids'].squeeze(0).to(device))
+    
+    return audio_token_embeds
+    
+
 
