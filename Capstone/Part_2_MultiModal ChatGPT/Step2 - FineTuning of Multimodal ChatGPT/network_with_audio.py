@@ -7,7 +7,7 @@ import random
 import gc
 import numpy as np
 import os
-from whisperx_module import audio_projection
+from whisperx_module import projection_audio
 
 # teacher forcing simulated annealing scheduler
 def frange_cycle_linear(n_iter, start=0.0001, stop=0.9999,  n_cycle=1, ratio=0.8):
@@ -72,7 +72,7 @@ class CLIPPhi2Model(torch.nn.Module):
             #self.resblock.load_state_dict(torch.load('model_chkpt/clipphi_resblock.pth'))
 
 
-    def generate(self,images,max_length,tokenizer):
+    def generate(self,images, audio_file, max_length,tokenizer):
         
         # clip model output for image
         clip_outputs = self.clip_model(**images)
@@ -85,7 +85,10 @@ class CLIPPhi2Model(torch.nn.Module):
         predicted_caption = torch.full((batch_size,max_length),50256)
         img_token_tensor = torch.tensor(self.IMAGE_TOKEN_ID).repeat(batch_size, 1)
         bos_token_embeds = self.phi_model.model.embed_tokens(img_token_tensor.to(image_embeds.device))
-        combined_embeds  = torch.cat([image_embeds, bos_token_embeds], dim=1) # 4,9,2560
+
+        #Audio integration
+        audio_embeds = projection_audio(audio_file)
+        combined_embeds  = torch.cat([image_embeds, bos_token_embeds, audio_embeds], dim=1) 
 
         for pos in range(max_length - 1):
             # pass through the model
