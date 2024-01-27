@@ -10,8 +10,12 @@ from transformers import Autotokenizer
 device = "cuda" if torch.cuda.is_available() else 'cpu'
 
 
-def speech2text(audio_file):
+def projection_audio(audio_file):
+    '''
+    converts audio to transcript to tokens to embeddings to be further inputted to phi model
+    '''
 
+    # Transcription
     batch_size = 1 
     compute_type = "float16" # change to "int8" if low on GPU mem (may reduce accuracy)
 
@@ -27,12 +31,10 @@ def speech2text(audio_file):
 
     result = model.transcribe(audio, batch_size=batch_size)
 
-    return result["segments"][0]['text']
+    transcript =  result["segments"][0]['text']
 
-def projection_audio(transcript):
-    '''
-    converts audio transcript to tokens to embeddings to be further inputted to phi
-    '''
+    #Tokenization and generating embeddings for making input ready to phi-2
+    
     tokenizer = AutoTokenizer.from_pretrained("microsoft/phi-2", trust_remote_code=True)
     phi_model = AutoModelForCausalLM.from_pretrained("microsoft/phi-2", trust_remote_code=True)
     
