@@ -1,7 +1,12 @@
 # Capstone - The School of AI ERA V1 - MultiModal ChatGPT (Text, Image, Audio -->> Text)
 
-*Hugging Face deployment*
+## This project is a complex and exciting one that involves both natural language processing (NLP) and computer vision.
+
+**This project entails the creation and integration of sophisticated language and vision models, showcasing a thorough approach in machine learning. The process involves training a customized language model, Phi 2, from the ground up, and further augmenting its capabilities through the implementation of techniques that align vision, audio and text for a robust understanding across multiple modalities.**
+
+***Hugging Face deployment***
 https://huggingface.co/spaces/RashiAgarwal/MultimodalChatGPT_TSAI
+
 
 
 ## Part - 1 : Training a Large Language Model from Scratch
@@ -12,21 +17,21 @@ https://huggingface.co/spaces/RashiAgarwal/MultimodalChatGPT_TSAI
 
 1. Large Language Model Microsoft-phi-2 (2.7 Billion Parameters) pre-trained from scratch on NVIDIA-A100 40GB GPU.
 
-2. Model trained on a cleaned 100MB data (zipped) - A small subset of RedPajama dataset- only cc and c4
+2. Model trained on a cleaned 100MB data (zipped) - A small subset of **RedPajama dataset**- only cc and c4
 
 3. Memory Management for pretraining on a single 40GB GPU
 
-**8bit BNB quantized optimizer used - bitsandbytes.optim.Adam8bit (4 times less memory usage when compared to AdamW/Adam)**
+   **8bit BNB quantized optimizer used - bitsandbytes.optim.Adam8bit (4 times less memory usage when compared to AdamW/Adam)**
 
-torch.cuda.amp.autocast(enabled=True)
+    torch.cuda.amp.autocast(enabled=True)
 
-torch.cuda.empty_cache() and gc.collect()
+    torch.cuda.empty_cache() and gc.collect()
 
-batch_size = 1
+    batch_size = 1
 
-gradient_accumulation_steps = 4
+    gradient_accumulation_steps = 4
 
-gradient_checkpointing not supported by phi-2
+    gradient_checkpointing not supported by phi-2
 
 #### 4. Training logs- Training loss dropped from 11.357 to 6.237 in 4000 iterations
 
@@ -46,7 +51,9 @@ Minimum loss observed = 5.442
    
 ### Language Model : microsoft/phi-2
 
-## Step 1 : Added and Trained the Projection layer from the CLIP embeddings to the Phi Model using single A100 40GB GPU
+## Step 1 : Visual Text Alignment
+
+**Training of the Custom Projection layer from the frozen pretrained CLIP embeddings to the frozen pretrained Phi-2 Model using single A100 40GB GPU**
 
 Image features from Clip Model are sent as Input and captions are passed as Target to Phi-2
 
@@ -79,30 +86,49 @@ batch_size = 2
 
 <img width="938" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/cfaf8c50-17ac-40bb-a742-88ead4750452">
 
-## Step 2 : Fine Tuning the model with Instruct150K dataset
+## Step 2 : Instruction Following Fine Tuning the model with Instruct150K dataset
 
 ### Visual_projector
 
-**Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 ad the quantized adaptor for Phi-2 
-Finetuning done using **QLoRA (Quantized Low Ranking Adaptation) Strategy**
+**Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 and the added quantized adaptor for the Query, Key & Value projection layers and dense fully connected layers of Phi-2. Finetuning done using **QLoRA (Quantized Low Ranking Adaptation) Strategy**. Methods for dataset preparation comprise Autoregressive Token Prediction and the Standard Language Model Training Method which helped in achieving model efficiency along with reasonable computational resources.
 
-### Audio_projector 
+### Audio_projector (No training involved)
 
-WhisperX Model used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
+**WhisperX** Model used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
  
-Pre-requisites : ffmpeg, pydub
-
 Accepts only the starting 15 seconds speech before transcribing
 
-Tokenize the transcript and embed tokens for making it input ready to Phi-2
+Tokenizing and processing the generated transcript for making it input ready to the model
 
+### Finetuning done for 10000 iterations on Google-Colab Pro A100 40GB GPU 
 
+Training loss dropped from 5.142 to 2.5 
 
+<img width="560" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/9930d195-ff5b-480d-bf79-d51fe51801d5">
 
+<img width="656" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/6fb5731e-593a-4928-b5d0-7e299e968b05">
 
-### The Input to the phi-2 model is the concatenation of the output from Image projection layer with the embeddings of the tokenized Audio output and instruction part from the dataset. The Answers are passed as Target.
+**Logs from wandb**
+
+https://wandb.ai/rashiagarwal/tsai_clip_phi2_project?workspace=user-rashiagarwal
+
+<img width="603" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/fb8f6e01-ff5e-4e19-8167-d11dc2c5ab36">
+
+### Some of the predictions made by the finetuned model
+
+<img width="339" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/7a651d5c-3b37-43c8-85b6-0ea8f3372a8c">
+Question: Is there any other notable building next to the clock tower?
+Answer:   Yes, there is a skyscraper located next to the clock tower.
+Model Predicted Ans: Yes, there is a large building next to the clock tower.The building next to the clock tower is a large, modern-looking building with a glass facade.It is a skyscraper, which is a tall, multi-story building.The skyscraper is located in a city or urban area, as it is surrounded by other buildings and streets.The skyscraper is visible from a distance, as it is tall and stands out in the cityscape.The skyscraper is a prominent feature of
+
+<img width="375" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/40d14872-ec4f-4772-bc81-88aefbc7bb84">
+Question: What color is the frisbee the man is holding?
+Answer:   The frisbee the man is holding is blue.
+Model Predicted Ans: The man is holding a blue frisbee.The man is standing in a field, which is visible in the image.The man is wearing a blue shirt and black pants.
+
 
 ### Further Action Planned:
-#### The Text output of the model can be further converted to Visual/ Audio output using Generative AI
+ 
+The Output of the model to be further enhanced with Visual/ Audio content using Generative AI
 
 
