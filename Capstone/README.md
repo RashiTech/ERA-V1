@@ -1,7 +1,7 @@
 # Capstone - ERAv1 - The School of AI 
 # MultiModal ChatGPT (Text, Image, Audio -> Text)
 
-## This is a complex and an exciting Project that involves the best of natural language processing (NLP) and computer vision (CV).
+## This is a complex and exciting Project that involves the best of natural language processing (NLP) and computer vision (CV).
 
 **This project entails the creation and integration of sophisticated language and vision models, showcasing a thorough approach in machine learning. The process involves training a customized language model, Phi 2, from the ground up, and further augmenting its capabilities through the implementation of techniques that align vision, audio and text for a robust understanding across multiple modalities.**
 
