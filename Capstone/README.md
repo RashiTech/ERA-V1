@@ -119,11 +119,13 @@ https://wandb.ai/rashiagarwal/tsai_clip_phi2_project?workspace=user-rashiagarwal
 ### Some of the predictions made by the finetuned model
 
 <img width="339" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/7a651d5c-3b37-43c8-85b6-0ea8f3372a8c">
+
 Question: Is there any other notable building next to the clock tower?
 Answer:   Yes, there is a skyscraper located next to the clock tower.
 Model Predicted Ans: Yes, there is a large building next to the clock tower.The building next to the clock tower is a large, modern-looking building with a glass facade.It is a skyscraper, which is a tall, multi-story building.The skyscraper is located in a city or urban area, as it is surrounded by other buildings and streets.The skyscraper is visible from a distance, as it is tall and stands out in the cityscape.The skyscraper is a prominent feature of
 
 <img width="375" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/40d14872-ec4f-4772-bc81-88aefbc7bb84">
+
 Question: What color is the frisbee the man is holding?
 Answer:   The frisbee the man is holding is blue.
 Model Predicted Ans: The man is holding a blue frisbee.The man is standing in a field, which is visible in the image.The man is wearing a blue shirt and black pants.
