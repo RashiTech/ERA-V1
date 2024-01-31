@@ -1,12 +1,17 @@
-# Capstone - The School of AI ERA V1 - MultiModal ChatGPT (Text, Image, Audio -->> Text)
+# Capstone - The School of AI ERA V1 
+# MultiModal ChatGPT (Text, Image, Audio -->> Text)
 
 ## This project is a complex and exciting one that involves both natural language processing (NLP) and computer vision.
 
 **This project entails the creation and integration of sophisticated language and vision models, showcasing a thorough approach in machine learning. The process involves training a customized language model, Phi 2, from the ground up, and further augmenting its capabilities through the implementation of techniques that align vision, audio and text for a robust understanding across multiple modalities.**
 
 ***Hugging Face deployment***
+
 https://huggingface.co/spaces/RashiAgarwal/MultimodalChatGPT_TSAI
 
+<img width="667" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/a05f7a6e-61b3-4fb4-bf0c-2c092cb62acd">
+
+<img width="638" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/2f767ca3-8c2c-4035-bb5d-24169b4cd70a">
 
 
 ## Part - 1 : Training a Large Language Model from Scratch
@@ -41,15 +46,12 @@ Minimum loss observed = 5.442
 
 <img width="603" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/501e3178-a999-4470-90af-a4c69833b2c7">
 
-## Part - 2 : Creating a Multimodal Chat GPT accepting Audio, Visual and Text inputs to generate Text output
+## Part - 2 : To create A Multimodal ChatGPT that accepts textual, Visual and Audio inputs and generate Textual response.
 
-### Objective: To create MultiModal Large Language Model (Frozen Clip + Frozen Phi-2) 
-
-***The Multimodal ChatGPT to accept textual, Visual and Audio content and generate Textual content in response to the three inputs***
-
-### Image Processor : wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M
+Models 
+**Visual Processor : wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M**
    
-### Language Model : microsoft/phi-2
+**Language Model : microsoft/phi-2**
 
 ## Step 1 : Visual Text Alignment
 
