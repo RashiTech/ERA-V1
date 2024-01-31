@@ -92,7 +92,7 @@ batch_size = 2
 
 ### Visual_projector
 
-**Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 and the added quantized adaptor for the Query, Key & Value projection layers and dense fully connected layers of Phi-2. Finetuning done using **QLoRA (Quantized Low Ranking Adaptation) Strategy**. Methods for dataset preparation comprise Autoregressive Token Prediction and the Standard Language Model Training Method which helped in achieving model efficiency along with reasonable computational resources.
+**Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 and the added quantized adaptor for the Query, Key & Value projection layers and dense fully connected layers of Phi-2. Parameter Efficient Fine Tuning (Peft) approach of **QLoRA - Quantization and Low-Rank Adapters Strategy**. Methods for dataset preparation comprise Autoregressive Token Prediction and the Standard Language Model Training Method which helped in achieving model efficiency along with reasonable computational resources.
 
 ### Audio_projector (No training involved)
 
