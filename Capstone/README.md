@@ -1,18 +1,22 @@
-# Capstone - The School of AI ERA V1
+# Capstone - The School of AI ERA V1 - MultiModal ChatGPT (Text, Image, Audio -->> Text)
+
+*Hugging Face deployment*
+https://huggingface.co/spaces/RashiAgarwal/MultimodalChatGPT_TSAI
+
 
 ## Part - 1 : Training a Large Language Model from Scratch
 
-## Pretraining of Language Model Microsoft/Phi-2
+### Pretraining of Language Model Microsoft/Phi-2
 
-### Project Keypoints
+#### Project Keypoints
 
-#### 1. Large Language Model Microsoft-phi-2 (2.7 Billion Parameters) pre-trained from scratch on NVIDIA-A100 40GB GPU.
+1. Large Language Model Microsoft-phi-2 (2.7 Billion Parameters) pre-trained from scratch on NVIDIA-A100 40GB GPU.
 
-#### 2. Model trained on a cleaned 100MB data (zipped) - A small subset of RedPajama dataset- only cc and c4
+2. Model trained on a cleaned 100MB data (zipped) - A small subset of RedPajama dataset- only cc and c4
 
-#### 3. Memory Management for pretraining on a single 40GB GPU
+3. Memory Management for pretraining on a single 40GB GPU
 
-8bit BNB quantized optimizer used - bitsandbytes.optim.Adam8bit (4 times less memory usage when compared to AdamW/Adam)
+**8bit BNB quantized optimizer used - bitsandbytes.optim.Adam8bit (4 times less memory usage when compared to AdamW/Adam)**
 
 torch.cuda.amp.autocast(enabled=True)
 
@@ -32,12 +36,11 @@ Minimum loss observed = 5.442
 
 <img width="603" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/501e3178-a999-4470-90af-a4c69833b2c7">
 
+## Part - 2 : Creating a Multimodal Chat GPT accepting Audio, Visual and Text inputs to generate Text output
 
+### Objective: To create MultiModal Large Language Model (Frozen Clip + Frozen Phi-2) 
 
-## Part - 2 : Creating a Multimodal Chat GPT accepting AUdio, Visual and Text inputs to generate Text output
-
-## Objective: To create MultiModal Large Language Model (Frozen Clip + Frozen Phi-2) 
-## The image projection layer to be pre-trained with image-caption(COCO 2017) dataset and then the entire model to be finetuned on Visual Q&A (instruct150K) datset
+***The Multimodal ChatGPT to accept textual, Visual and Audio content and generate Textual content in response to the three inputs***
 
 ### Image Processor : wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M
    
@@ -45,15 +48,15 @@ Minimum loss observed = 5.442
 
 ## Step 1 : Added and Trained the Projection layer from the CLIP embeddings to the Phi Model using single A100 40GB GPU
 
-#### Image features are sent as Input and captions are passed as Target
+Image features from Clip Model are sent as Input and captions are passed as Target to Phi-2
 
-#### This is a linear FC layer with input dimension = 640 (Tiny CLIP output embedding size) and output dimension = 2560 to match phi-2's embedding size
+This is a linear FC layer with input dimension = 640 (Tiny CLIP output embedding size) and output dimension = 2560 to match phi-2's embedding size
 
-Tiny CLIP's config
+**Tiny CLIP's config**
 
  <img width="421" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/04fb4c84-6933-446d-bf0a-83a7f737a495">
 
-#### Dataset used : COCO 2017
+**Dataset used : COCO 2017**
 
 #### Memory Management for training on a single GPU (40GB)
 
@@ -78,21 +81,24 @@ batch_size = 2
 
 ## Step 2 : Fine Tuning the model with Instruct150K dataset
 
-### Text Finetuning done using QLoRA Strategy
+### Visual_projector
 
-### Audio_projector : whisperX_module.py
+**Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 ad the quantized adaptor for Phi-2 
+Finetuning done using **QLoRA (Quantized Low Ranking Adaptation) Strategy**
 
-#### WhisperX used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
+### Audio_projector 
+
+WhisperX Model used for Automatic Speech Recognition to enable the audio part of the Multimodal GPT 
  
-#### Pre-requisites : ffmpeg, pydub
+Pre-requisites : ffmpeg, pydub
 
-#### Accepts only the starting 10 seconds speech before transcribing
+Accepts only the starting 15 seconds speech before transcribing
 
-#### Tokenize the transcript and embed tokens for making it input ready to Phi-2
+Tokenize the transcript and embed tokens for making it input ready to Phi-2
 
-## To be Done -Final integration and fine tuning
 
-### For Visual Part we have the pretrained Projection Layer from Step 1 to be further finetuned with instruct150k dataset
+
+
 
 ### The Input to the phi-2 model is the concatenation of the output from Image projection layer with the embeddings of the tokenized Audio output and instruction part from the dataset. The Answers are passed as Target.
 
