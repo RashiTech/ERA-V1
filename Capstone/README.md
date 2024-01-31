@@ -46,7 +46,7 @@ Minimum loss observed = 5.442
 
 <img width="603" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/501e3178-a999-4470-90af-a4c69833b2c7">
 
-## Part - 2 : To create A Multimodal ChatGPT that accepts textual, Visual and Audio inputs and generate Textual response.
+## Part - 2 : To create A Multimodal ChatGPT that accepts textual, Visual and Audio inputs to generate Textual response.
 
 Models 
 **Visual Processor : wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M**
