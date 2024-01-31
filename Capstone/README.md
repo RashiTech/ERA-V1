@@ -53,7 +53,7 @@ Models
    
 **Language Model : microsoft/phi-2**
 
-## Step 1 : Visual Text Alignment
+### Step 1 : Visual Text Alignment- Pretraining
 
 **Training of the Custom Projection layer from the frozen pretrained CLIP embeddings to the frozen pretrained Phi-2 Model using single A100 40GB GPU**
 
@@ -88,9 +88,9 @@ batch_size = 2
 
 <img width="938" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/cfaf8c50-17ac-40bb-a742-88ead4750452">
 
-## Step 2 : Instruction Following Fine Tuning the model with Instruct150K dataset
+## Step 2 : Instruction Following Fine-Tuning the model with Instruct150K dataset
 
-### Visual_projector
+### Visual_projector and Phi-2 Finetuning
 
 **Instruct150k** dataset used to finetune the pretrained Projection Layer from Step 1 and the added quantized adaptor for the Query, Key & Value projection layers and dense fully connected layers of Phi-2. Parameter Efficient Fine Tuning (Peft) approach of **QLoRA - Quantization and Low-Rank Adapters Strategy**. Methods for dataset preparation comprise Autoregressive Token Prediction and the Standard Language Model Training Method which helped in achieving model efficiency along with reasonable computational resources.
 
