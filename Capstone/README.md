@@ -1,4 +1,4 @@
-# Capstone - The School of AI ERA V1 
+# Capstone - ERAv1 - The School of AI 
 # MultiModal ChatGPT (Text, Image, Audio -->> Text)
 
 ## This project is a complex and exciting one that involves both natural language processing (NLP) and computer vision.
