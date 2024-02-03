@@ -42,7 +42,7 @@ https://huggingface.co/spaces/RashiAgarwal/MultimodalChatGPT_TSAI
 
 Minimum loss observed = 5.442
 
-**With more compute resources and longer training, a fairly low training loss could be achieved to achieve a good LLM.**
+**With more compute resources and longer training, a fairly low training loss could be achieved to develop a good LLM.**
 
 <img width="583" alt="image" src="https://github.com/RashiTech/ERA-V1/assets/90626052/234eedd0-57b4-40f1-ba73-768e062a779f">
 
